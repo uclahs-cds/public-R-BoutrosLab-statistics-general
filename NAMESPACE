@@ -1,0 +1,31 @@
+useDynLib(BoutrosLab.statistics.general)
+
+export(
+	"calculate.and.compare.correlations",
+	"calculate.concordance.coefficient",
+	"calculate.overlap.and.pvalue",
+	"coefficient.of.variation", 
+	"compare.correlations",
+	"count.NA",
+	"create.qqplot.fit.confidence.interval",
+	"euclidean.distance", 
+	"geometric.mean",
+	"get.aov.p",
+	"get.biserial.p.and.corr", 
+	"get.coefficient.of.bimodality",
+	"get.correlation.p.and.corr",
+	"get.foldchange",
+	"get.odds.ratio", 
+	"get.standard.error",
+	"get.ttest.p",
+	"get.ttest.p.and.foldchange",
+	"get.utest.p", 
+	"get.utest.p.and.medianfoldchange",
+	"jaccard.distance",
+	"ks.test.critical.value",
+	"outlier.floor.and.ceil", 
+	"sem",
+	"ttest.analysis",
+	"weighted.AIC",
+	"zscore"
+       )
