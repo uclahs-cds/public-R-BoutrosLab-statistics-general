@@ -3,7 +3,8 @@
 \title{Get the p-value from a u-test and calculate the median foldchange}
 \description{Tests the median difference of two samples and returns the p-value from a u-test with useful default parameters and calculates the median foldchange. Returns NA if the u-test is uncalculable (i.e. does try() handling).}
 \usage{
-get.utest.p.and.medianfoldchange(x, group1, group2, paired = FALSE, alternative = 'two.sided', logged = TRUE);
+get.utest.p.and.medianfoldchange(x, group1, group2, paired = FALSE,
+    alternative = 'two.sided', logged = TRUE);
 }
 \arguments{
   \item{x}{Vector of numbers to analyze}

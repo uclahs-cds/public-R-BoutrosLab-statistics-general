@@ -34,7 +34,8 @@ total.size <- 2000;
 # 500 SNPs on array found on chromosome 1 
 # Identified 41 special SNPs
 # 5 interesting SNPs found on chromosome 1
-# Question: Is 5 over or under-represented on chromosome 1 as compared to the proportion of chromosome 1 SNPs on the array?
+# Question: Is 5 over or under-represented on chromosome 1 as compared to
+# the proportion of chromosome 1 SNPs on the array?
 
 list1 <- paste("SNP", 1:41);
 list2 <- paste("SNP", 37:536);

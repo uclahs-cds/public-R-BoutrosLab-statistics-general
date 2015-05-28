@@ -3,7 +3,8 @@
 \title{Get the p-value from a t-test and calculate the foldchange}
 \description{Returns the p-value from a t-test with useful default parameters and calculates the foldchange. Returns NA if the t-test is uncalculable (i.e. does try() handling).}
 \usage{
-get.ttest.p.and.foldchange(x, group1, group2, paired = FALSE, var.equal = FALSE, alternative = 'two.sided', logged = TRUE);
+get.ttest.p.and.foldchange(x, group1, group2, paired = FALSE, var.equal = FALSE,
+    alternative = 'two.sided', logged = TRUE);
 }
 \arguments{
   \item{x}{Vector of numbers to analyze}

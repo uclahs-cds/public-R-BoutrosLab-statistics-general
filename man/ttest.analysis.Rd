@@ -13,6 +13,7 @@ ttest.analysis(values, groups, alternative = "two.sided");
 \value{Data frame with relevant statistics}
 \author{Nathalie Moon}
 \examples{
-ttest.analysis(values = c(rnorm(n=50, mean=0), rnorm(n=50, mean=10)), groups = factor(c(rep('A', times=50), rep('B', times=50))));
+ttest.analysis(values = c(rnorm(n=50, mean=0), rnorm(n=50, mean=10)), 
+    groups = factor(c(rep('A', times=50), rep('B', times=50))));
 }
 \keyword{htest}

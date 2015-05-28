@@ -35,8 +35,8 @@ jaccard.distance <- function(x, y = NULL, diag = FALSE, upper = FALSE) {
 		x <- cbind(x,y);
 		}
     
-    if (require(BoutrosLab.dist.overload)) {
-		return(dist(x,diag = diag, upper = upper, method = 'jaccard')); #use C version 
+    if (requireNamespace("BoutrosLab.dist.overload")) {
+		return(BoutrosLab.dist.overload::dist(x,diag = diag, upper = upper, method = 'jaccard')); #use C version 
 		}
 
     datalists <- dim(x)[1];

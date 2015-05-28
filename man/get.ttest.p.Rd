@@ -3,7 +3,8 @@
 \title{Get the p-value from a t-test}
 \description{Returns the p-value from a t-test with useful default parameters. Returns NA if the t-test is uncalculable (i.e. does try() handling).}
 \usage{
-get.ttest.p(x, group1, group2, paired = FALSE, var.equal = FALSE, alternative = 'two.sided');
+get.ttest.p(x, group1, group2, paired = FALSE, var.equal = FALSE, 
+    alternative = 'two.sided');
 }
 \arguments{
   \item{x}{Vector of numbers to analyze}

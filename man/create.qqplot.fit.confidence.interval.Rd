@@ -3,7 +3,8 @@
 \title{Create the confidence bands for a one-sample qq plot}
 \description{Returns the values of constructing the confidence bands for a one-sample qq plot}
 \usage{
-create.qqplot.fit.confidence.interval(x, distribution = qnorm, conf = 0.95, conf.method = "both", reference.line.method = "quartiles");
+create.qqplot.fit.confidence.interval(x, distribution = qnorm, conf = 0.95,
+    conf.method = "both", reference.line.method = "quartiles");
 }
 \arguments{
   \item{x}{A numeric vector}
@@ -26,8 +27,10 @@ qqnorm(tmp.x);
 qqline(tmp.x);
 lines(tmp.confidence.interval$z, tmp.confidence.interval$upper.pw, lty = 2, col = "brown");
 lines(tmp.confidence.interval$z, tmp.confidence.interval$lower.pw, lty = 2, col = "brown");
-lines(tmp.confidence.interval$z[tmp.confidence.interval$u], tmp.confidence.interval$upper.sim, lty = 2, col = "blue");
-lines(tmp.confidence.interval$z[tmp.confidence.interval$l], tmp.confidence.interval$lower.sim, lty = 2, col = "blue");
+lines(tmp.confidence.interval$z[tmp.confidence.interval$u], 
+    tmp.confidence.interval$upper.sim, lty = 2, col = "blue");
+lines(tmp.confidence.interval$z[tmp.confidence.interval$l], 
+    tmp.confidence.interval$lower.sim, lty = 2, col = "blue");
 
 legend(1, -1.5, c("simultaneous", "pointwise"), col = c("blue", "brown"), lty = 2, bty = "n");
 
