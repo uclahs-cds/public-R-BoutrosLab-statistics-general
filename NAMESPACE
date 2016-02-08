@@ -29,3 +29,7 @@ export(
 	"weighted.AIC",
 	"zscore"
        )
+  importFrom("stats", "anova", "aov", "as.dist", "coef", "cor",
+             "cor.test", "cov", "ecdf", "lm", "median", "na.omit",
+             "phyper", "pnorm", "ppoints", "qnorm", "quantile", "sd",
+             "t.test", "uniroot", "var", "wilcox.test");
