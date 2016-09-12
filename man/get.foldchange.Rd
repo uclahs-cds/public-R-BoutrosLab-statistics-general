@@ -1,7 +1,7 @@
 \name{get.foldchange}
 \alias{get.foldchange}
 \title{get.foldchange}
-\description{Calculates the fold-changes between two samples. Calculated as mean(group1) / mean(group2)}
+\description{Calculates the fold-changes between two samples. Calculated as mean(group2) / mean(group1)}
 \usage{
 get.foldchange(x, group1, group2, logged = TRUE);
 }

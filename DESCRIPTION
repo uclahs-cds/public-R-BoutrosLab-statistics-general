@@ -1,8 +1,8 @@
 Package: BoutrosLab.statistics.general
-Version: 2.1.2
+Version: 2.1.3
 Type: Package
 Title: Utility Statistical Functions
-Date: 2014-10-23
+Date: 2016-09-12
 Author: Dr. Paul C. Boutros
 Maintainer: Paul Boutros <Paul.Boutros@oicr.on.ca>
 Depends: R (>= 2.15.1)
