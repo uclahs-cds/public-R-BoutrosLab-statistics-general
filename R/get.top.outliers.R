@@ -66,19 +66,19 @@ get.top.outliers <- function(input.df, max.outliers, delta.limit = 0.05, n = 5, 
 		} else if (max.outliers > length(signi.samples)) {
 			max.outliers = length(signi.samples);
 			};
-		skip.samples <- data.frame(
+		outlier.samples <- data.frame(
 			matrix(
 				combn(signi.samples, max.outliers), 
 				ncol= max.outliers,
 				byrow = TRUE
 				)
 			);
-		if (n > nrow(skip.samples)) {
-			n = nrow(skip.samples)
+		if (n > nrow(outlier.samples)) {
+			n = nrow(outlier.samples)
 		};
-		# compute correlation coefficient for each combination of skipped samples
+		# compute correlation coefficient for each combination of outliers
 		corr.adj <- apply(
-			skip.samples,
+			outlier.samples,
 			1,
 			function(x) unname(
 				cor.test(
@@ -89,7 +89,7 @@ get.top.outliers <- function(input.df, max.outliers, delta.limit = 0.05, n = 5, 
 				)
 			);
 		corr.delta <- corr.adj - corr.unadj;
-		output.sample <- data.frame(corr.adj, corr.delta, matrix(rownames(input.df)[unlist(skip.samples)], ncol=max.outliers));
+		output.sample <- data.frame(corr.adj, corr.delta, matrix(rownames(input.df)[unlist(outlier.samples)], ncol=max.outliers));
 		colnames(output.sample) <- c('new.corr', 'corr.delta', paste('outlier.sample', 1:max.outliers, sep = '.'));
 		# sort by descending corr delta
 		output.sample <- output.sample[order(-output.sample$corr.delta),];
