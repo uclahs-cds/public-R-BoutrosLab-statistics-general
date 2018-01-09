@@ -14,7 +14,7 @@ logrank_perm(So,x,no_cores=1);
 \author{Erik Drysdale}
 
 \examples{
-# # WARNING! FOR LARGE NUMBERS OF CALCULATIONS, REQUEST SUFFICIENT RAM OF PROGRAM MAY CRASH!
+# # WARNING! FOR LARGE NUMBERS OF CALCULATIONS, REQUEST SUFFICIENT RAM OR PROGRAM MAY CRASH!
 # # Matrix version
 # So <- as.matrix(survival::Surv(time=survival::aml$time,event=survival::aml$status))
 # # Encode one of the groups
