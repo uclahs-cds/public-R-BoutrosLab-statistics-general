@@ -15,8 +15,8 @@ esttime_logrank_perm(N,k,no_cores=1,tform='min');
 \author{Erik Drysdale}
 \examples{
 # # Get the estimated time (may take a minute or so but will hold for all N/k)
-# N <- 100
-# k <- 4
+# N <- 50
+# k <- 5
 # esttime_logrank_perm(N=N ,k=k, no_cores=4,tform='secs')
 # # Check
 # So <- matrix(c(1:N,rep(1,N)),ncol=2)
