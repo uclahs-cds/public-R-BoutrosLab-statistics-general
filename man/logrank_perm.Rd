@@ -15,6 +15,7 @@ logrank_perm(So,x,no_cores=1);
 
 \examples{
 # # WARNING! FOR LARGE NUMBERS OF CALCULATIONS, REQUEST SUFFICIENT RAM OR PROGRAM MAY CRASH!
+# # PARALLELIZATION MAXES OUT AT 6 CORES
 # # Matrix version
 # So <- as.matrix(survival::Surv(time=survival::aml$time,event=survival::aml$status))
 # # Encode one of the groups
@@ -22,7 +23,7 @@ logrank_perm(So,x,no_cores=1);
 # # Run the classical log-rank test
 # lrtest <- survival::survdiff(survival::Surv(time=survival::aml$time,event=survival::aml$status)~x)
 # # Permutation version (may take a minute)
-# permtest <- logrank_perm(So=So,x=x,no_cores = 12)
+# permtest <- logrank_perm(So=So,x=x,no_cores = 6)
 # # Compare p-values
 # data.frame(lrtest=pchisq(lrtest$chisq,1,lower.tail=FALSE),
 # 		   permtest=permtest$pval)
