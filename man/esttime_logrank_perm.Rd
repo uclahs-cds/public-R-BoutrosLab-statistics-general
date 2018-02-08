@@ -3,7 +3,7 @@
 \title{Estimated run time for Log-Rank Permutation Test}
 \description{Calculates the estimated run time for performing a log-rank permutation test with N patients with k variants}
 \usage{
-esttime_logrank_perm(N,k,no_cores=1,tform='min');
+esttime_logrank_perm(N,k,no_cores=1,tform='mins');
 }
 \arguments{
         \item{N}{The number of patients}
