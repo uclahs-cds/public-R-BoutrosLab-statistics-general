@@ -7,7 +7,7 @@ DEPENDS = $(SOURCES_C:.c=.d)
 OBJECTS = $(SOURCES_C:.c=.o) 
 
 BoutrosLab.statistics.general: $(OBJECTS)
-	R CMD SHLIB -o BoutrosLab.statistics.general.so $(OBJECTS)
+	$(R_HOME)/bin/R CMD SHLIB -o BoutrosLab.statistics.general.so $(OBJECTS)
 
 clean:
 	rm -f *.o *.so
