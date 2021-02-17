@@ -1,0 +1,8 @@
+---
+Category: 'tool'
+Description: 'Contains statistical functions.'
+Maintainers: ['PBoutros@mednet.ucla.edu']
+Contributors: ['Christopher Lalansigh', 'Chris Cooper', 'Emilie Lalonde', 'Erik Drysdale', 'Jeff Green']
+Languages: 'R'
+Dependencies: 'R'
+References: ''
