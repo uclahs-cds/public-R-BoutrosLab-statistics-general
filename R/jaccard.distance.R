@@ -34,16 +34,16 @@ jaccard.distance <- function(x, y = NULL, diag = FALSE, upper = FALSE) {
 
 		x <- cbind(x,y);
 		}
-    
-    if (requireNamespace("BoutrosLab.dist.overload")) {
-		return(BoutrosLab.dist.overload::dist(x,diag = diag, upper = upper, method = 'jaccard')); #use C version 
+
+    if (requireNamespace("vegan")) {
+		return(vegan::vegdist(x,diag = diag, upper = upper, method = 'jaccard')); #use C version
 		}
 
     datalists <- dim(x)[1];
     length <- dim(x)[2];
 
     if (100 < datalists) {
-		cat("Warning: Without BoutrosLab.dist.overload package, jaccard.distance runs very slowly on larger datasets.\neg. A 1000x1000 dataset takes 30 minutes");
+		cat("Warning: Without vegan package, jaccard.distance runs very slowly on larger datasets.\neg. A 1000x1000 dataset takes 30 minutes");
 		}
 
     outmatrix <- mat.or.vec(datalists,datalists);
@@ -60,7 +60,7 @@ jaccard.distance <- function(x, y = NULL, diag = FALSE, upper = FALSE) {
 		outmatrix <- outmatrix + t(outmatrix); #fill in upper portion
 		}
 
-	outmatrix <- as.dist(outmatrix, diag = diag, upper = upper) 
+	outmatrix <- as.dist(outmatrix, diag = diag, upper = upper)
 
 	return(outmatrix);
 

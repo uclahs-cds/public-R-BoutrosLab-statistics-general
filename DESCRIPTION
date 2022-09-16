@@ -6,7 +6,7 @@ Date: 2016-09-12
 Author: Dr. Paul C. Boutros
 Maintainer: Paul Boutros <Paul.Boutros@oicr.on.ca>
 Depends: R (>= 2.15.1)
-Suggests: BoutrosLab.dist.overload (>= 1.0.1)
+Suggests: vegan
 Description: Contains statistical functions.
 License: GPL-2
 LazyLoad: yes
