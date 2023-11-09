@@ -1,10 +1,10 @@
 # System files
-.DS_Store
+*.DS_Store
 
 # R
 .Rhistory
 .Rapp.history
-.Rproj.user
+*.Rproj.*
 .RData
 docs
 
