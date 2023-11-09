@@ -1,0 +1,8 @@
+BoutrosLab.statistics.general 2.1.4 2023-11-09
+
+ADDED
+* Basic README
+* LICENSE.md
+
+UPDATED
+* Use latest CI/CD actions to test code style and run standard R package checks

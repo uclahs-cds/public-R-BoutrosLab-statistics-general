@@ -4,3 +4,8 @@
 ^docs$
 ^pkgdown$
 ^\.github$
+^README\.md$
+^LICENSE\.md$
+^metadata\.yaml$
+^.*\.{jpeg,png,gif,tiff}$
+^\.cicd-env$
