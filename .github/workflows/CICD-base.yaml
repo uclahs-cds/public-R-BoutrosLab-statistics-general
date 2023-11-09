@@ -4,10 +4,10 @@ name: CICD-base
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   CICD-base:
@@ -22,4 +22,4 @@ jobs:
 
       # Run CICD-base
       - name: CICD-base
-        uses: docker://blcdsdockerregistry/cicd-base:latest
+        uses: docker://ghcr.io/uclahs-cds/cicd-base:latest
