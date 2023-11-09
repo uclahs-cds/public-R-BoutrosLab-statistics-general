@@ -68,8 +68,7 @@ pkstwo(int n, double *x, double tol) {
                 s += exp(k * k * z - w);
             }
             x[i] = s / M_1_SQRT_2PI;
-        }
-        else {
+        } else {
             z = -2 * x[i] * x[i];
             s = -1;
             k = 1;
@@ -94,27 +93,27 @@ static double psmirnov2x(double *x, int m, int n) {
     if (m > n) {
         i = n; n = m; m = i;
     }
-    md = (double) m;
-    nd = (double) n;
+    md = static_cast<double>(m);
+    nd = static_cast<double>(n);
     /*
        q has 0.5/mn added to ensure that rounding error doesn't
        turn an equality into an inequality, eg abs(1/2-4/5)>3/10 
 
     */
     q = (0.5 + floor(*x * md * nd - 1e-7)) / (md * nd);
-    u = (double *) R_alloc(n + 1, sizeof(double));
+    u = reinterpret_cast<double *>(R_alloc(n + 1, sizeof(double)));
 
     for (j = 0; j <= n; j++) {
         u[j] = ((j / nd) > q) ? 0 : 1;
     }
     for (i = 1; i <= m; i++) {
-        w = (double)(i) / ((double)(i + n));
+        w = static_cast<double>((i) / ((double)(i + n)));
         if ((i / md) > q)
             u[0] = 0;
         else
             u[0] = w * u[0];
         for (j = 1; j <= n; j++) {
-            if (fabs(i / md - j / nd) > q) 
+            if (fabs(i / md - j / nd) > q)
                 u[j] = 0;
             else
                 u[j] = w * u[j] + u[j - 1];
@@ -142,11 +141,11 @@ K(int n, double d) {
        if (s > 7.24 || (s > 3.76 && n > 99)) 
            return 1-2*exp(-(2.000071+.331/sqrt(n)+1.409/n)*s);
     */
-    k = (int) (n * d) + 1;
+    k = static_cast<int>((n * d) + 1);
     m = 2 * k - 1;
     h = k - n * d;
-    H = (double*) Calloc(m * m, double);
-    Q = (double*) Calloc(m * m, double);
+    H = reinterpret_cast<double*>(Calloc(m * m, double));
+    Q = reinterpret_cast<double*>(Calloc(m * m, double));
     for (i = 0; i < m; i++)
         for (j = 0; j < m; j++)
             if (i - j + 1 < 0)
@@ -160,9 +159,10 @@ K(int n, double d) {
     H[(m - 1) * m] += ((2 * h - 1 > 0) ? pow(2 * h - 1, m) : 0);
     for (i = 0; i < m; i++)
         for (j=0; j < m; j++)
-            if (i - j + 1 > 0)
+            if (i - j + 1 > 0) {
                 for (g = 1; g <= i - j + 1; g++)
                     H[i * m + j] /= g;
+            }
     eH = 0;
     m_power(H, eH, Q, &eQ, m, n);
     s = Q[(k - 1) * m + k - 1];
@@ -210,15 +210,14 @@ m_power(double *A, int eA, double *V, int *eV, int m, int n) {
         return;
     }
     m_power(A, eA, V, eV, m, n / 2);
-    B = (double*) Calloc(m * m, double);
+    B = reinterpret_cast<double*>(Calloc(m * m, double));
     m_multiply(V, V, B, m);
     eB = 2 * (*eV);
     if ((n % 2) == 0) {
         for (i = 0; i < m * m; i++)
             V[i] = B[i];
         *eV = eB;
-    }
-    else {
+    } else {
         m_multiply(A, B, V, m);
         *eV = eA + eB;
     }
